@@ -11,6 +11,7 @@ exports.handler = async (event) => {
 };
 
 async function main() {
+    await prepareDiving()
     await completeDiving()
 }
 
@@ -18,6 +19,20 @@ async function completeDiving() {
     const mutation = gql`
         mutation CompleteDivingIfExist {
             completeDivingIfExist {
+                success
+                reason
+            }   
+        }
+    `
+
+    let result = await request(URL, mutation)
+    console.log(JSON.stringify(result, undefined, 2))
+}
+
+async function prepareDiving() {
+    const mutation = gql`
+        mutation PrepareDivingIfExist {
+            prepareDivingIfExist {
                 success
                 reason
             }   
