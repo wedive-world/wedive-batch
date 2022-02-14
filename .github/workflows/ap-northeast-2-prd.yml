@@ -22,11 +22,6 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Setup AWS SAM CLI
-        # You may pin to the exact commit or the version.
-        # uses: aws-actions/setup-sam@0578b2f57e540e67233c3ce0c5477ee36938ff3d
-        uses: aws-actions/setup-sam@v1
-        
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
