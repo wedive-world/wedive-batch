@@ -38,7 +38,7 @@ jobs:
 
       - name: Zipping source code
         run: |
-          zip source.zip .
+          zip -r source.zip .
       
       - name: Deploy lambda code
         run: aws lambda update-function-code --function-name wedive-batch --zip-file fileb://source.zip
